@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% include 'accountCss.html' %}
+{% block content %}
+<div class="account-page">
+  <div class="account-header">
+    <h1>Account</h1>
+  </div>
+  <div class="account-sections">
+    <div class="profile-section">
+      <h2>Profile</h2>
+      <p>Name: John Doe</p>
+      <p>Email: john.doe@example.com</p>
+      <p>Phone: 555-555-5555</p>
+      <button class="edit-profile-button">Edit Profile</button>
+    </div>
+    <div class="orders-section">
+      <h2>Orders</h2>
+      <ul>
+        <li>Order #12345: Product Name 1, Product Name 2</li>
+        <li>Order #67890: Product Name 3, Product Name 4</li>
+      </ul>
+      <button class="view-all-orders-button">View All Orders</button>
+    </div>
+    <div class="settings-section">
+      <h2>Settings</h2>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox">
+            Notifications
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            Newsletter
+          </label>
+        </li>
+      </ul>
+      <button class="save-settings-button">Save Settings</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

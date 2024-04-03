@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     role = db.Column(db.String(20))
     order = db.relationship('Order', backref='user', lazy=True)
 
-    __table_args__ = (
+    db.__table_args__ = (
         db.CheckConstraint('phone_number ~* \'^(\\+\\d{1,3}[- ]?)?\\d{10}$\'', name='valid_phone_number'),
         db.CheckConstraint("to_date(birth_date, 'DD.MM.YYYY') IS NOT NULL", name="valid_birth_date_format"),
         db.CheckConstraint("role IN ('Administrator', 'Advanced user', 'User')", name="valid_role"),
@@ -40,7 +40,7 @@ class Product(db.Model):
     product_number = db.Column(db.Integer)
     order = db.relationship('Order', backref='product', lazy=True)
 
-    __table_args__ = (
+    db.__table_args__ = (
         db.CheckConstraint("barcode ~ '^\d+$'", name="valid_barcode_digits")
     )
 
@@ -58,7 +58,7 @@ class Order(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
 
-    __table_args__ = (
+    db.__table_args__ = (
         db.CheckConstraint("to_date(order_date, 'DD.MM.YYYY') IS NOT NULL", name="valid_order_date_format")
     )
 
