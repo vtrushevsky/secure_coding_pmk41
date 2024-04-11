@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/signUp.css">
+</head>
+<body>
+<div id="signup-form-wrap">
+  <h2>Sign up</h2>
+  <form id="signup-form" action="{{ url_for("auth.sign_up") }}" method="post">
+    <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="surname" name="surname" placeholder="Surname" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="name" name="name" placeholder="Name" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="birth_date" name="birth_date" placeholder="Birth date" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="phone_number" name="phone_number" placeholder="Phone number" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="password1" name="password1" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="password2" name="password2" placeholder="Password confirm" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="submit" id="submit" value="submit"></p>
+  </form>
+  <div id="login-wrap">
+      <p>Already have account? <a href="/login">Login</a></p>
+       <p><a href="/">Back</a><p>
+  </div>
+</div>
+</body>
+</html>

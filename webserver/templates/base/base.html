@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/orders.css">
+    <link rel="stylesheet" href="static/css/account.css">
+    <link rel="stylesheet" href="static/css/navigationBar.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/home">Home</a>
+            {% if current_user.is_authenticated %}
+            <a href="/orders">Orders</a>
+             <a href="/myAccount">My Account</a>
+             <a href="/logout">Logout</a>
+            {% else %}
+            <a href="/login">Log In</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

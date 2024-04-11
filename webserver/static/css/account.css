@@ -1,29 +1,6 @@
-<style>
-    body {
+body {
       font-family: Arial, sans-serif;
       background-color: #481E14;
-    }
-
-    header {
-      background-color: #0C0C0C;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      display: inline-block;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px;
-      text-decoration: none;
-      color: #9B3922;
-    }
-
-    nav a:hover {
-      background-color: #F2613F;
     }
 
     .account-page {
@@ -87,4 +64,3 @@
     input[type="checkbox"] {
       margin-right: 10px;
     }
-</style>
