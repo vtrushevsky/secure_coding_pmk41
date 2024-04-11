@@ -6,7 +6,19 @@
     <link rel="stylesheet" href="static/css/signUp.css">
 </head>
 <body>
+<header>
+    <nav><a href="/home">Home</a></nav>
+</header>
 <div id="signup-form-wrap">
+    {% with massages = get_flashed_messages(with_categories=true) %}
+        {% if massages%}
+            {% for category, message in messages %}
+                {% if category == 'SignUpError' %}
+                    <div class="alert-error">Error: {{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
   <h2>Sign up</h2>
   <form id="signup-form" action="{{ url_for("auth.sign_up") }}" method="post">
     <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
@@ -20,7 +32,7 @@
   </form>
   <div id="login-wrap">
       <p>Already have account? <a href="/login">Login</a></p>
-       <p><a href="/">Back</a><p>
+       <p><a href="/login">Back</a><p>
   </div>
 </div>
 </body>

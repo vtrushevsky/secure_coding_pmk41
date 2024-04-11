@@ -11,7 +11,7 @@ auth = Blueprint('auth', __name__)
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        flash('You are already logged in. Log out first!', category='error')
+        flash('You are already logged in. Log out first!', category='LoginError')
         return redirect(url_for('views.home'))
 
     if request.method == 'POST':
@@ -26,9 +26,9 @@ def login():
 
                 return redirect(url_for('views.home'))
             else:
-                flash('Incorrect password, try again.', category='error')
+                flash('Incorrect password, try again.', category='LoginError')
         else:
-            flash('Email does not exist.', category='error')
+            flash('Email does not exist.', category='LoginError')
 
     return render_template("login.html", user=current_user)
 
@@ -59,20 +59,21 @@ def sign_up():
 
         user = User.query.filter_by(email=email).first()
         if user:
-            flash('Email already exists.', category='error')
+            flash('Email already exists.', category='SignUpError')
         elif len(email) < 4:
-            flash('Email must be greater than 4 characters.', category='error')
+            flash('Email must be greater than 4 characters.', category='SignUpError')
         elif len(surname) < 2:
-            flash('Username must be greater than 1 character.', category='error')
+            flash('Username must be greater than 1 character.', category='SignUpError')
         elif password1 != password2:
-            flash('Passwords don\'t match.', category='error')
+            flash('Passwords don\'t match.', category='SignUpError')
         elif len(password1) < 7:
-            flash('Password must be at least 7 characters.', category='error')
+            flash('Password must be at least 7 characters.', category='SignUpError')
         else:
             new_user = User(email=email, surname=surname, name=name, birth_date=birth_date, phone_number=phone_number,
                             role=role, password=generate_password_hash(password=password1, method='pbkdf2'))
             db.session.add(new_user)
             db.session.commit()
+            print(db.Table.columns)
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))

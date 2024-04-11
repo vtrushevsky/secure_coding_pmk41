@@ -18,5 +18,5 @@ def orders():
 
 
 @views.route('/home', methods=['GET', 'POST'])
-def welcome():
+def home():
     return render_template("home.html")

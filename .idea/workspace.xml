@@ -5,30 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2621b50-d106-4cb5-afe1-4c5d7ec1bc83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/webserver/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/account.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/navigationBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/orders.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/signUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/templates/base/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/templates/base/baseAdvanseUser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/templates/signUp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/accountCss.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/accountForNonAuth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/homeCss.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/static/css/signUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/signUp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/ordersCss.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/singUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/base/baseAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/welcome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/signUp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
