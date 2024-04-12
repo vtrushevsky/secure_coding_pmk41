@@ -1,10 +1,11 @@
 from . import db
 from flask_login import UserMixin
+
+
 # from sqlalchemy.sql import func
 
 
 class User(db.Model, UserMixin):
-
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(30), unique=True)
     surname = db.Column(db.String(20))
@@ -30,9 +31,12 @@ class User(db.Model, UserMixin):
         self.role = role
         self.password = password
 
+    @property
+    def get_role(self):
+        return self.role
+
 
 class Product(db.Model):
-
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(40), unique=False)
     barcode = db.Column(db.String(85), unique=True)
@@ -46,13 +50,12 @@ class Product(db.Model):
 
     def __init__(self, product_name, barcode, product_type, product_number):
         self.product_name = product_name
-        self. barcode = barcode
+        self.barcode = barcode
         self.product_type = product_type
         self.product_number = product_number
 
 
 class Order(db.Model):
-
     id = db.Column(db.Integer, primary_key=True)
     order_date = db.Column(db.String(10))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

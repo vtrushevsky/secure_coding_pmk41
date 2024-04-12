@@ -7,10 +7,9 @@
   <div class="account-sections">
     <div class="profile-section">
       <h2>Profile</h2>
-      <p>Name: John Doe</p>
-      <p>Email: john.doe@example.com</p>
-      <p>Phone: 555-555-5555</p>
-      <button class="edit-profile-button">Edit Profile</button>
+      <p>Name: {{ current_user.name }} {{ current_user.surname }}</p>
+      <p>Email: {{ current_user.email }}</p>
+      <p>Phone: {{ current_user.phone_number }}</p>
     </div>
     <div class="orders-section">
       <h2>Orders</h2>

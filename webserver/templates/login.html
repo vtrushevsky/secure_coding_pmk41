@@ -11,24 +11,41 @@
 </header>
 <body>
     <div id="login-form-wrap">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                {% if category == 'LoginError' %}
-                    <div class="alert-error">{{ message }}</div>
+        <div class="alert-container">
+            <h2>Login</h2>
+            <form id="login-form" action="{{ url_for("auth.login") }}" method="post">
+                <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
+                <p><input type="text" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
+            <div class="alert-container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                   {% for category, message in messages %}
+                      <div class="alert alert-{{ category }}">
+                          <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close"
+                                  onclick="closeAlert(this)">x</button>
+                              <!-- Next stuff is under the "button" tag -->
+                              <!--<span aria-hidden="true">&times;</span>-->
+                              <!--<i class="fas fa-times"></i>-->
+                          {{ message }}
+                      </div>
+                   {% endfor %}
                 {% endif %}
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-  <h2>Login</h2>
-  <form id="login-form" action="{{ url_for("auth.login") }}" method="post">
-    <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
-    <p><input type="text" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
-    <p><input type="submit" id="login" value="Login"></p>
-  </form>
-  <div id="create-account-wrap">
-      <p>Not a member? <a href="/sign_up">Sing up</a></p>
-  </div>
-</div>
+            {% endwith %}
+        </div>
+    <script>function closeAlert(button)
+        {
+    var alert = button.closest('.alert');
+    if (alert)
+    {
+        alert.style.display = 'none'; // Hide the alert
+    }
+}</script>
+                <p><input type="submit" id="login" value="Login"></p>
+            </form>
+            <div id="create-account-wrap">
+                <p>Not a member? <a href="/sign_up">Sing up</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

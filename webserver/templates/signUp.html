@@ -10,15 +10,6 @@
     <nav><a href="/home">Home</a></nav>
 </header>
 <div id="signup-form-wrap">
-    {% with massages = get_flashed_messages(with_categories=true) %}
-        {% if massages%}
-            {% for category, message in messages %}
-                {% if category == 'SignUpError' %}
-                    <div class="alert-error">Error: {{ message }}</div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
   <h2>Sign up</h2>
   <form id="signup-form" action="{{ url_for("auth.sign_up") }}" method="post">
     <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
@@ -28,6 +19,30 @@
     <p><input type="text" id="phone_number" name="phone_number" placeholder="Phone number" required><i class="validation"><span></span><span></span></i></p>
     <p><input type="text" id="password1" name="password1" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
     <p><input type="text" id="password2" name="password2" placeholder="Password confirm" required><i class="validation"><span></span><span></span></i></p>
+    <div class="alert-container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                   {% for category, message in messages %}
+                      <div class="alert alert-{{ category }}">
+                          <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close"
+                                  onclick="closeAlert(this)">x</button>
+                              <!-- Next stuff is under the "button" tag -->
+                              <!--<span aria-hidden="true">&times;</span>-->
+                              <!--<i class="fas fa-times"></i>-->
+                          {{ message }}
+                      </div>
+                   {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    <script>function closeAlert(button)
+        {
+    var alert = button.closest('.alert');
+    if (alert)
+    {
+        alert.style.display = 'none'; // Hide the alert
+    }
+}</script>
     <p><input type="submit" id="submit" value="submit"></p>
   </form>
   <div id="login-wrap">
@@ -35,5 +50,6 @@
        <p><a href="/login">Back</a><p>
   </div>
 </div>
+
 </body>
 </html>

@@ -16,6 +16,12 @@
             <a href="/orders">Orders</a>
              <a href="/myAccount">My Account</a>
              <a href="/logout">Logout</a>
+                {% if current_user.role == "Administrator" %}
+                    <a href="/AdminTools">Tools</a>
+                {% endif %}
+                {% if current_user.role == "AdvancedUser" %}
+                    <a href="/AdvancedUserTools">Tools</a>
+                {% endif %}
             {% else %}
             <a href="/login">Log In</a>
             {% endif %}

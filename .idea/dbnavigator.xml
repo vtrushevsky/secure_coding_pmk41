@@ -24,13 +24,15 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" object-ref="schemas/database/tables/user" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.product" active-filter-id="" />
+    <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.product" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.user" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">

@@ -20,3 +20,13 @@ def orders():
 @views.route('/home', methods=['GET', 'POST'])
 def home():
     return render_template("home.html")
+
+
+@views.route('/AdminTools', methods=['GET', 'POST'])
+def admin_tools():
+    return render_template("AdminTools.html")
+
+
+@views.route('/AdvancedUserTools', methods=['GET', 'POST'])
+def advanced_user_tools():
+    return render_template("AdvancedUserTools.html")
