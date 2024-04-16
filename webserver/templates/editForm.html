@@ -1,0 +1,25 @@
+{% extends 'base/baseAdmin.html' %}
+
+{% block content %}
+<header>
+    <nav><a href="/user_list">Back</a></nav>
+</header>
+<div id="edit-form-wrap">
+  <h2>edit</h2>
+  <form id="signup-form" action="{{ url_for("views.edit") }}" method="post">
+    <p><input type="text" id="id" name="id" placeholder="id" required><i class="validation"><span></span><span></span></i></p>
+
+    <p><input type="email" id="email" name="email" placeholder={{user.email}} required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="surname" name="surname" placeholder="Surname" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="name" name="name" placeholder="Name" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="birth_date" name="birth_date" placeholder="Birth date" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="phone_number" name="phone_number" placeholder="Phone number" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="password1" name="password1" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="text" id="password2" name="password2" placeholder="Password confirm" required><i class="validation"><span></span><span></span></i></p>
+    <p><input type="submit" id="submit" value="submit"></p>
+  </form>
+  <div id="login-wrap">
+  </div>
+</div>
+
+{% endblock %}

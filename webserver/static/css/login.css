@@ -168,3 +168,24 @@ input[type="submit"]:hover {
   border-radius: 0 0 4px 4px;
 }
 
+.close {
+  border: none;
+  display: block;
+  background-color: #f10e3d;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.close:hover {
+  background-color: #78071f;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+

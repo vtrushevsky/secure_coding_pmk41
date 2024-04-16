@@ -31,9 +31,9 @@ class User(db.Model, UserMixin):
         self.role = role
         self.password = password
 
-    @property
-    def get_role(self):
-        return self.role
+    def __repr__(self):
+        return [["email", self.email], ["surname", self.surname], ["name", self.name], ["birth_date", self.birth_date],
+                ["phone_number", self.phone_number], ["role", self.role]]
 
 
 class Product(db.Model):
