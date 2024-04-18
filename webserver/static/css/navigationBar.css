@@ -1,5 +1,5 @@
 header {
-      background-color: #0C0C0C;
+      background-color: #4793AF;
       padding: 20px;
       text-align: center;
     }
@@ -13,9 +13,9 @@ header {
       margin: 0 10px;
       padding: 10px;
       text-decoration: none;
-      color: #9B3922;
+      color: #c5dee8;
     }
 
     nav a:hover {
-      background-color: #F2613F;
+      background-color: #7ab3ca;
     }

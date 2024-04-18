@@ -1,0 +1,16 @@
+{% extends 'base/baseAdmin.html' %}
+
+{% block content %}
+
+<div class="change-form">
+<form method="post">
+    <dl>
+        <div class="field">{{ form.product_name }}</div>
+        <div class="field">{{ form.barcode }}</div>
+        <div class="field">{{ form.product_type }}</div>
+        <div class="field">{{ form.product_number }}</div>
+    </dl>
+    <p><input type="submit" value="Submit">
+</p></form>
+</div>
+{% endblock %}

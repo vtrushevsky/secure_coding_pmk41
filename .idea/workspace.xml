@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2621b50-d106-4cb5-afe1-4c5d7ec1bc83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/AdminTools.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/templates/editForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webserver/templates/userList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/static/css/AdminTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/static/css/editForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/templates/_formhelpers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/templates/productAddForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webserver/templates/productEditForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/static/css/signUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/signUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/AdminTools.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/static/css/AdminTools.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/static/css/navigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/static/css/navigationBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/base/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/templates/base/baseAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/base/baseAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/editForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/editForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/ordersList.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/productList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/userList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +40,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "OlehVoitovych"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;OlehVoitovych&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>

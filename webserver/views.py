@@ -1,6 +1,8 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import db, User
+from .models import db, User, Product
+from .forms import *
+from .tables import *
 
 # from . import db
 
@@ -23,25 +25,82 @@ def home():
     return render_template("home.html")
 
 
-@views.route('/user_list', methods=['GET', 'POST'])
+@views.route('/admin_tools', methods=['GET', 'POST'])
 def user_list():
     users = User.query.all()
-    return render_template("userList.html", users=users)
+    table = AdminUserEdit(users)
+    table.border = True
+    return render_template("userList.html", table=table)
 
 
-@views.route('/editForm', methods=['GET', 'POST'])
-def edit():
-    if request.method == 'POST':
-        user = User.query.filter_by(id=id).first()
-        return render_template("editForm.html", user=user)
+@views.route('/edit_user/<int:id>', methods=['GET', 'POST'])
+def edit_user(id):
+    user = User.query.filter_by(id=id).first()
+    if user:
+        form = UserForm(formdata=request.form, obj=user)
+        if request.method == 'POST' and form.validate():
+            # save edits
+            save_changes_user(user, form)
+            flash('User updated successfully!')
+            return redirect('/admin_tools')
+        return render_template('editForm.html', form=form)
     else:
-        users = User.query.all()
-        return render_template("userList.html", users=users)
+        return 'Error loading #{id}'.format(id=id)
 
 
-@views.route('/orders_list', methods=['GET', 'POST'])
-def orders_list():
-    return render_template("userList.html")
+def save_changes_user(user, form, new=False):
+    user.email = form.email.data
+    user.surname = form.surname.data
+    user.name = form.name.data
+    user.birth_date = form.birth_date.data
+    user.phone_number = form.phone_number.data
+    user.role = form.role.data
+    if new:
+        db.session.add(user)
+    db.session.commit()
+
+
+@views.route('/product_list', methods=['GET', 'POST'])
+def product_list():
+    products = db.session.query(Product).all()
+    table = AdminProductEdit(products)
+    table.border = True
+    return render_template("productList.html", table=table)
+
+
+@views.route('/edit_product/<int:id>', methods=['GET', 'POST'])
+def edit_product(id):
+    product = Product.query.filter_by(id=id).first()
+    if product:
+        form = ProductForm(formdata=request.form, obj=product)
+        if request.method == 'POST' and form.validate():
+            save_changes_product(product, form)
+            flash('User updated successfully!')
+            return redirect('/product_list')
+        return render_template('productEditForm.html', form=form)
+    else:
+        return 'Error loading #{id}'.format(id=id)
+
+
+@views.route('/add_product', methods=['GET', 'POST'])
+def add_product():
+    form = ProductForm(request.form)
+    if request.method == 'POST':
+        db.session.add(
+            Product(form.product_name.data, form.barcode.data, form.product_type.data, form.product_number.data))
+        db.session.commit()
+        return redirect('/product_list')
+    return render_template("productAddForm.html", form=form)
+
+
+def save_changes_product(prod, form, new=False):
+    prod.product_name = form.product_name.data
+    prod.barcode = form.barcode.data
+    prod.product_type = form.product_type.data
+    prod.product_number = form.product_number.data
+    if new:
+        db.session.add(prod)
+    db.session.commit()
 
 
 @views.route('/AdvancedUserTools', methods=['GET', 'POST'])

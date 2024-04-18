@@ -1,19 +1,7 @@
 {% extends 'base/baseAdmin.html' %}
 
 {% block content %}
-<button onclick="enableInput()">edit</button>
-<script>
-        function enableInput() {
-            // Get the input field element
-            document.getElementById('email').disabled = this.checked;
-            document.getElementById('surname').disabled = this.checked;
-            document.getElementById('name').disabled = this.checked;
-            document.getElementById('phone_number').disabled = this.checked;
-            document.getElementById('role').disabled = this.checked;
-        }
-    </script>
-
-<table>
+<!--<table>
     <th>
     <td>Email</td>
     <td>Surname</td>
@@ -24,13 +12,13 @@
  {% for user in users %}
  <tr>
      <td>{{ user.id }}</td>
-     <td><p><input type="email" id="email" name="email" placeholder={{user.email}} disabled></p></td>
-     <td><p><input type="text" id="surname" name="surname" placeholder={{user.surname}} disabled></p></td>
-     <td><p><input type="text" id="name" name="name" placeholder={{user.name}} disabled></p></td>
-     <td><p><input type="text" id="phone_number" name="phone_number" placeholder={{user.phone_number}} disabled></p></td>
-     <td><p><input type="text" id="role" name="role" placeholder={{user.role}} disabled></p></td>
+     <td>{{ user.email }}</td>
+     <td>{{ user.surname }}</td>
+     <td>{{ user.name }}</td>
+     <td>{{ user.phone_number }}</td>
+     <td>{{ user.role }}</td>
  </tr>
   {% endfor %}
-</table>
-
+</table> -->
+{{ table }}
 {% endblock %}

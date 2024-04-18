@@ -16,7 +16,7 @@
             <a href="/orders">Orders</a>
              <a href="/myAccount">My Account</a>
                 {% if current_user.role == "Administrator" %}
-                    <a href="/AdminTools">Tools</a>
+                    <a href="/admin_tools">Tools</a>
                 {% endif %}
                 {% if current_user.role == "AdvancedUser" %}
                     <a href="/AdvancedUserTools">Tools</a>

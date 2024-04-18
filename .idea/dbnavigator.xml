@@ -32,6 +32,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.product" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="b0774b29-8ad9-4f1f-adf1-a4162b44d154" dataset="database.order" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
