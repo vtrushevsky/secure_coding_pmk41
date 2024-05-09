@@ -1,12 +1,13 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from flask_login import login_required, current_user
-from .models import db, User, Product
+from .models import db, User, Product, Order
+from datetime import datetime
 from .forms import *
 from .tables import *
 
 # from . import db
-curr_cart = set([])
 
+curr_cart = dict({})
 views = Blueprint('views', __name__)
 
 
@@ -17,30 +18,56 @@ def my_acc():
 
 @views.route('/AddToCart/<int:id>', methods=['GET', 'POST'])
 def add_cart(id):
-    curr_cart.add(id)
-    print(curr_cart)
+    if current_user.email in curr_cart.keys():
+        temp: set = curr_cart[current_user.email].copy()
+        temp.add(id)
+        curr_cart.update({current_user.email: temp})
+    else:
+        temp: set = set({})
+        temp.add(id)
+        curr_cart.update({current_user.email: temp})
     return redirect(url_for("views.home"))
 
 
 @views.route('/cart', methods=['GET', 'POST'])
 def cart():
-    isemty = False
     print("len", len(curr_cart))
-    if len(curr_cart) == 0:
-        isemty = True
-        return render_template("cart.html", isemty=isemty)
+    if current_user.email not in curr_cart.keys():
+        return render_template("EmptyCart.html")
+    elif len(curr_cart[current_user.email]) == 0:
+        return render_template("EmptyCart.html")
     else:
         products = []
-        for i in curr_cart:
+        for i in curr_cart[current_user.email]:
             products.append(db.session.query(Product).filter_by(id=i).first())
-        table = ProductHome(products)
+        table = ProductCart(products)
         table.border = True
-        return render_template("cart.html", table=table, isemty=isemty)
+        return render_template("cart.html", table=table)
+
+
+@views.route('/deleteFromCart/<int:id>', methods=['GET', 'POST'])
+def delete_from_cart(id):
+    curr_cart[current_user.email].remove(id)
+    return redirect(url_for("views.cart"))
+
+
+@views.route('/makeOrder', methods=['GET', 'POST'])
+def make_order():
+    user = User.query.filter_by(email=current_user.email).first()
+    for i in curr_cart[current_user.email]:
+        db.session.add(Order(str(datetime.now()), user.id, i))
+        db.session.commit()
+    curr_cart[current_user.email].clear()
+    return redirect(url_for('views.orders'))
 
 
 @views.route('/orders', methods=['GET', 'POST'])
 def orders():
-    return render_template("orders.html")
+    user = User.query.filter_by(email=current_user.email).first()
+    orders = db.session.query(Order).filter_by(user_id=user.id).all()
+    table = Orders(orders)
+    table.border = True
+    return render_template("orders.html", table=table)
 
 
 @views.route('/home', methods=['GET', 'POST'])

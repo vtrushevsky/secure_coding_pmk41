@@ -37,3 +37,9 @@ class ProductCart(Table):
     product_type = Col('product_type')
     barcode = Col('barcode')
     delete = LinkCol('Delete', 'views.delete_from_cart', url_kwargs=dict(id='id'))
+
+
+class Orders(Table):
+    id = Col('id', show=False)
+    order_date = Col('order_date')
+    product_id = Col('product_id')

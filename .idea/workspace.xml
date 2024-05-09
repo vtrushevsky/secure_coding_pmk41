@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2621b50-d106-4cb5-afe1-4c5d7ec1bc83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/webserver/static/css/MainTables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/editForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/userEditForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/productAddForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/productAddForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webserver/templates/productList.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/productList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
