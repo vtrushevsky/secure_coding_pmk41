@@ -11,6 +11,31 @@
         <div class="field">{{ form.product_number }}</div>
     </dl>
     <p><input type="submit" value="Submit">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                   {% for category, message in messages %}
+                        {% if category == "ProdAddErr" %}
+                            <div class="alert-container">
+                                <div class="alert alert-{{ category }}">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closeAlert(this)">{{ message }}</button>
+                              <!-- Next stuff is under the "button" tag -->
+                              <!--<span aria-hidden="true">&times;</span>-->
+                              <!--<i class="fas fa-times"></i>-->
+                                </div>
+                            </div>
+                          {% endif %}
+                   {% endfor %}
+                {% endif %}
+            {% endwith %}
+    <script>function closeAlert(button)
+        {
+            var alert = button.closest('.alert');
+            if (alert)
+            {
+                alert.style.display = 'none'; // Hide the alert
+            }
+        }
+    </script>
 </p></form>
 </div>
 {% endblock %}

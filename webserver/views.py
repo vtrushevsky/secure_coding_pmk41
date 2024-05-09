@@ -5,7 +5,7 @@ from .forms import *
 from .tables import *
 
 # from . import db
-
+curr_cart = set([])
 
 views = Blueprint('views', __name__)
 
@@ -15,6 +15,29 @@ def my_acc():
     return render_template("account.html")
 
 
+@views.route('/AddToCart/<int:id>', methods=['GET', 'POST'])
+def add_cart(id):
+    curr_cart.add(id)
+    print(curr_cart)
+    return redirect(url_for("views.home"))
+
+
+@views.route('/cart', methods=['GET', 'POST'])
+def cart():
+    isemty = False
+    print("len", len(curr_cart))
+    if len(curr_cart) == 0:
+        isemty = True
+        return render_template("cart.html", isemty=isemty)
+    else:
+        products = []
+        for i in curr_cart:
+            products.append(db.session.query(Product).filter_by(id=i).first())
+        table = ProductHome(products)
+        table.border = True
+        return render_template("cart.html", table=table, isemty=isemty)
+
+
 @views.route('/orders', methods=['GET', 'POST'])
 def orders():
     return render_template("orders.html")
@@ -22,7 +45,10 @@ def orders():
 
 @views.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template("home.html")
+    products = db.session.query(Product).all()
+    table = ProductHome(products)
+    table.border = True
+    return render_template("home.html", table=table)
 
 
 @views.route('/admin_tools', methods=['GET', 'POST'])
@@ -47,7 +73,7 @@ def edit_user(id):
                 save_changes_user(user, form)
                 flash('User updated successfully!')
                 return redirect('/admin_tools')
-            return render_template('editForm.html', form=form)
+            return render_template('userEditForm.html', form=form)
         else:
             return 'Error loading #{id}'.format(id=id)
     else:
@@ -94,14 +120,30 @@ def edit_product(id):
         return redirect(url_for("views.home"))
 
 
+@views.route('/delete_product/<int:id>', methods=['GET', 'POST'])
+def delete_product(id):
+    if current_user.role == "Administrator":
+
+        db.session.query(Product).filter_by(id=id).delete()
+        db.session.commit()
+        return redirect('/product_list')
+    else:
+        return redirect(url_for("views.home"))
+
+
 @views.route('/add_product', methods=['GET', 'POST'])
 def add_product():
     if current_user.role == "Administrator":
         form = ProductForm(request.form)
-        if request.method == 'POST':
-            db.session.add(
-                Product(form.product_name.data, form.barcode.data, form.product_type.data, form.product_number.data))
-            db.session.commit()
+        if request.method == 'POST' and form.validate():
+            try:
+                db.session.add(
+                    Product(form.product_name.data, form.barcode.data, form.product_type.data,
+                            form.product_number.data))
+                db.session.commit()
+            except Exception:
+                flash("product already exist", category="ProdAddErr")
+                return redirect('/add_product')
             return redirect('/product_list')
         return render_template("productAddForm.html", form=form)
     else:

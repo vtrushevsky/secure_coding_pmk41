@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    {% if isempty == False%}
+        {{ table }}
+    {% else %}
+            <p>Cart is Empty</p>
+    {% endif %}
+{% endblock %}

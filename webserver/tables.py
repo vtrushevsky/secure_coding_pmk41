@@ -21,3 +21,19 @@ class AdminProductEdit(Table):
     product_number = Col('product_number')
     order = Col('order')
     edit = LinkCol('Edit', 'views.edit_product', url_kwargs=dict(id='id'))
+    delete = LinkCol('Delete', 'views.delete_product', url_kwargs=dict(id='id'))
+
+
+class ProductHome(Table):
+    id = Col('id', show=False)
+    product_name = Col('product_name')
+    product_type = Col('product_type')
+    edit = LinkCol('AddToCart', 'views.add_cart', url_kwargs=dict(id='id'))
+
+
+class ProductCart(Table):
+    id = Col('id', show=False)
+    product_name = Col('product_name')
+    product_type = Col('product_type')
+    barcode = Col('barcode')
+    delete = LinkCol('Delete', 'views.delete_from_cart', url_kwargs=dict(id='id'))

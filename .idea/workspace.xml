@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2621b50-d106-4cb5-afe1-4c5d7ec1bc83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/webserver/static/css/MainTables.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/editForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/userEditForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/productAddForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/productAddForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webserver/templates/productList.html" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/templates/productList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webserver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webserver/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +64,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;TeamManchurVoitovych&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Oleh/Documents/GitHub/secure_coding_pmk41&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -118,5 +125,16 @@
       <updated>1712074621721</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
