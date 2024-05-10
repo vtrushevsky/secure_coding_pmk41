@@ -78,6 +78,17 @@ def home():
     return render_template("home.html", table=table)
 
 
+@views.route('/AdvancedUserTools', methods=['GET', 'POST'])
+def ad_user_list():
+    if current_user.role == "AdvancedUser":
+        users = User.query.all()
+        table = ADUserEdit(users)
+        table.border = True
+        return render_template("ADuserList.html", table=table)
+    else:
+        return redirect(url_for("views.home"))
+
+
 @views.route('/admin_tools', methods=['GET', 'POST'])
 def user_list():
     if current_user.role == "Administrator":

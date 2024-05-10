@@ -24,11 +24,20 @@ class AdminProductEdit(Table):
     delete = LinkCol('Delete', 'views.delete_product', url_kwargs=dict(id='id'))
 
 
+class ADUserEdit(Table):
+    id = Col('Id', show=False)
+    email = Col('email')
+    surname = Col('surname')
+    name = Col('name')
+    birth_date = Col('birth_date')
+    phone_number = Col('phone_number')
+
+
 class ProductHome(Table):
     id = Col('id', show=False)
     product_name = Col('product_name')
     product_type = Col('product_type')
-    edit = LinkCol('AddToCart', 'views.add_cart', url_kwargs=dict(id='id'))
+    AddToCart = LinkCol('AddToCart', 'views.add_cart', url_kwargs=dict(id='id'))
 
 
 class ProductCart(Table):
