@@ -1,6 +1,6 @@
 {% macro render_field(field) %}
   {% if field.id != 'csrf_token' %}
-  <dt><b>{{ field.label }}<b></dt>
+  <dt><b>{{ field.label }}</b></dt>
   <dd>{{ field(**kwargs) }}{% if field.flags.required %}*{% endif %}
   {% endif %}
   {% if field.errors %}

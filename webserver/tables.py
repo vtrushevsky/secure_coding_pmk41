@@ -37,6 +37,7 @@ class ProductHome(Table):
     id = Col('id', show=False)
     product_name = Col('product_name')
     product_type = Col('product_type')
+    # edit = LinkCol('AddToCart', 'views.add_cart', url_kwargs=dict(id='id'))
     AddToCart = LinkCol('AddToCart', 'views.add_cart', url_kwargs=dict(id='id'))
 
 
