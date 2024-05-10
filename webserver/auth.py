@@ -30,12 +30,12 @@ def login():
                            f'({email}) logged in successfully.')
                 return redirect(url_for('views.home'))
             else:
-                Logger.log(f'[{datetime.now().strftime("%H:%M:%S.%f")[:10]}] UserID: {current_user.id} '
-                           f'({email}) failed to logged in.')
+                # Logger.log(f'[{datetime.now().strftime("%H:%M:%S.%f")[:10]}] UserID: {current_user.id} '
+                #            f'({email}) failed to logged in.')
                 flash('Incorrect password, try again.', category='LoginError')
         else:
-            Logger.log(f'[{datetime.now().strftime("%H:%M:%S.%f")[:10]}] User: '
-                       f'({email}) attempted to log in. No such user in DB.')
+            # Logger.log(f'[{datetime.now().strftime("%H:%M:%S.%f")[:10]}] User: '
+            #            f'({email}) attempted to log in. No such user in DB.')
             flash('Email does not exist.', category='LoginError')
 
     return render_template("login.html", user=current_user)

@@ -11,3 +11,5 @@
 [14:57:08.0] UserID: 2 retrieved own product orders.
 [14:57:17.4] UserID: 2 (Administrator) retrieved user-list.
 [15:00:17.4] UserID: 3 (123@123) logged in successfully.
+[15:02:14.2] User: (123@12) attempted to log in. No such user in DB.
+[15:03:38.3] UserID: 3 (123@123) logged in successfully.
