@@ -4,3 +4,9 @@
 [14:09:42.7] UserID: 2 (Administrator) retrieved user-list.
 [14:09:47.7] UserID: 2 (Administrator) edited productID 1.
 [14:37:08.4] UserID: 2 (Administrator) retrieved user-list.
+[14:56:38.7] UserID: 3 (123@123) logged in successfully.
+[14:57:00.2] UserID: 2 (admin@admin) logged in successfully.
+[14:57:04.1] UserID: 2 added item #1 to cart.
+[14:57:07.9] UserID: 2 made new order of productID 1.
+[14:57:08.0] UserID: 2 retrieved own product orders.
+[14:57:17.4] UserID: 2 (Administrator) retrieved user-list.
