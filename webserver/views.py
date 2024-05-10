@@ -99,7 +99,6 @@ def orders():
 
 @views.route('/', methods=['GET', 'POST'])
 @views.route('/home', methods=['GET', 'POST'])
-@login_required
 def home():
     products = db.session.query(Product).all()
     table = ProductHome(products)
