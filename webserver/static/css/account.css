@@ -1,0 +1,66 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #481E14;
+    }
+
+    .account-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      color: #74a7c6;
+    }
+
+    .account-header {
+      margin-bottom: 50px;
+    }
+
+    .account-sections {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .profile-section,
+    .orders-section,
+    .settings-section {
+      flex: 1;
+      margin-right: 50px;
+    }
+
+    .profile-section h2,
+    .orders-section h2,
+    .settings-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .edit-profile-button,
+    .view-all-orders-button,
+    .save-settings-button {
+      padding: 5px 10px;
+      background-color: #F2613F;
+      color: #9B3922;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }

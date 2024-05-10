@@ -1,0 +1,21 @@
+header {
+      background-color: #4793AF;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: inline-block;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px;
+      text-decoration: none;
+      color: #c5dee8;
+    }
+
+    nav a:hover {
+      background-color: #7ab3ca;
+    }

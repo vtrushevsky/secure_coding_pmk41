@@ -1,0 +1,24 @@
+{% extends 'base/baseAdmin.html' %}
+
+{% block content %}
+<!--<table>
+    <th>
+    <td>Email</td>
+    <td>Surname</td>
+    <td>Name</td>
+    <td>Phone_number</td>
+    <td>Role</td>
+    </th>
+ {% for user in users %}
+ <tr>
+     <td>{{ user.id }}</td>
+     <td>{{ user.email }}</td>
+     <td>{{ user.surname }}</td>
+     <td>{{ user.name }}</td>
+     <td>{{ user.phone_number }}</td>
+     <td>{{ user.role }}</td>
+ </tr>
+  {% endfor %}
+</table> -->
+{{ table }}
+{% endblock %}

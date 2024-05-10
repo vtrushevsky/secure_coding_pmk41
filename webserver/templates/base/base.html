@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/orders.css">
+    <link rel="stylesheet" href="static/css/account.css">
+    <link rel="stylesheet" href="static/css/navigationBar.css">
+    <link rel="stylesheet" href="static/css/MainTables.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/home">Home</a>
+            {% if current_user.is_authenticated %}
+            <a href="/cart">Cart</a>
+             <a href="/myAccount">My Account</a>
+                {% if current_user.role == "Administrator" %}
+                    <a href="/admin_tools">Tools</a>
+                {% endif %}
+                {% if current_user.role == "AdvancedUser" %}
+                    <a href="/AdvancedUserTools">Tools</a>
+                {% endif %}
+            <a href="/logout">Logout</a>
+            {% else %}
+            <a href="/login">Log In</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

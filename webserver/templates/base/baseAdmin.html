@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/editForm.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/AdminTables.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/navigationBar.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/home">Home</a>
+          <a href="/admin_tools">User List</a>
+          <a href="/product_list">Product List</a>
+            {% if request.path == "/product_list"%}
+            <a href="/add_product">Add product</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

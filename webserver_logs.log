@@ -1,0 +1,15 @@
+[14:09:34.4] UserID: 2 retrieved own product orders.
+[14:09:37.8] UserID: 2 (Administrator) retrieved user-list.
+[14:09:42.7] UserID: 2 (Administrator) edited user 2 (admin@admin).
+[14:09:42.7] UserID: 2 (Administrator) retrieved user-list.
+[14:09:47.7] UserID: 2 (Administrator) edited productID 1.
+[14:37:08.4] UserID: 2 (Administrator) retrieved user-list.
+[14:56:38.7] UserID: 3 (123@123) logged in successfully.
+[14:57:00.2] UserID: 2 (admin@admin) logged in successfully.
+[14:57:04.1] UserID: 2 added item #1 to cart.
+[14:57:07.9] UserID: 2 made new order of productID 1.
+[14:57:08.0] UserID: 2 retrieved own product orders.
+[14:57:17.4] UserID: 2 (Administrator) retrieved user-list.
+[15:00:17.4] UserID: 3 (123@123) logged in successfully.
+[15:02:14.2] User: (123@12) attempted to log in. No such user in DB.
+[15:03:38.3] UserID: 3 (123@123) logged in successfully.

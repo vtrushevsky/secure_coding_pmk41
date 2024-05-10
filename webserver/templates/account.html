@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="account-page">
+  <div class="account-header">
+    <h1>Account</h1>
+  </div>
+  <div class="account-sections">
+    <div class="profile-section">
+      <h2>Profile</h2>
+      <p>Name: {{ current_user.name }} {{ current_user.surname }}</p>
+      <p>Email: {{ current_user.email }}</p>
+      <p>Phone: {{ current_user.phone_number }}</p>
+    </div>
+    <div class="orders-section">
+      <h2>Orders</h2>
+      <ul>
+        <li>Order #12345: Product Name 1, Product Name 2</li>
+        <li>Order #67890: Product Name 3, Product Name 4</li>
+      </ul>
+      <button class="view-all-orders-button"><a href="/orders">View All Orders</a></button>
+    </div>
+    <div class="settings-section">
+      <h2>Settings</h2>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox">
+            Notifications
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            Newsletter
+          </label>
+        </li>
+      </ul>
+      <button class="save-settings-button">Save Settings</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

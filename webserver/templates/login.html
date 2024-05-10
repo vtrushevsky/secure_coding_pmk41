@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<header>
+    <nav><a href="/home">Home</a></nav>
+</header>
+<body>
+    <div id="login-form-wrap">
+            <h2>Login</h2>
+            <form id="login-form" action="{{ url_for('auth.login') }}" method="post">
+                <p><input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i></p>
+                <p><input type="text" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i></p>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                   {% for category, message in messages %}
+                        {% if category == "LoginError" %}
+                            <div class="alert-container">
+                                <div class="alert alert-{{ category }}">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closeAlert(this)">{{ message }}</button>
+                              <!-- Next stuff is under the "button" tag -->
+                              <!--<span aria-hidden="true">&times;</span>-->
+                              <!--<i class="fas fa-times"></i>-->
+                                </div>
+                            </div>
+                          {% endif %}
+                   {% endfor %}
+                {% endif %}
+            {% endwith %}
+    <script>function closeAlert(button)
+        {
+            var alert = button.closest('.alert');
+            if (alert)
+            {
+                alert.style.display = 'none'; // Hide the alert
+            }
+        }
+    </script>
+            <p><input type="submit" id="login" value="Login"></p>
+            </form>
+            <div id="create-account-wrap">
+                <p>Not a member? <a href="/sign_up">Sing up</a></p>
+            </div>
+        </div>
+</body>
+</html>
