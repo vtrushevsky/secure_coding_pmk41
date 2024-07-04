@@ -18,7 +18,7 @@ def create_app():
     app.config['SESSION_COOKIE_HTTPONLY'] = True  # prevents client-side JavaScript from accessing the session cookie
 
     db.init_app(app)
-    sslify = SSLify(app=app)  # MITM prevention - force redirect from 80/8080 to 443
+    #sslify = SSLify(app=app)  # MITM prevention - force redirect from 80/8080 to 443
 
     from .views import views
     from .auth import auth
